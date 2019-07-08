@@ -3,15 +3,15 @@ import axios from 'axios'
 import qs from 'qs'
 
 //2.全局配置
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'http://10.31.164.10:8000/';
 
 //3.定义接口 并 导出
 
-export const goodsListApi = (apiParams) => {
+export const sListApi = (apiParams) => {
     return axios({
-        method:'',
-        url: '',
-        params: apiParams 
+        method:'post',
+        url: '/order',
+        data: qs.stringify(apiParams) 
     }).then(res => res.data)
 }
 

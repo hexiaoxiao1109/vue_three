@@ -7,7 +7,7 @@
         overflow: hidden;
     }
     .layout-header-bar{
-        background: #fff;
+        background:black;
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
     }
 </style>
@@ -40,6 +40,14 @@
                     <MenuItem name="3-1">Option 1</MenuItem>
                     <MenuItem name="3-2">Option 2</MenuItem>
                 </Submenu>
+                <Submenu name="4">
+                    <template slot="title">
+                        <Icon type="ios-analytics"></Icon>
+                        Item 4
+                    </template>
+                    <MenuItem name="4-1">Option 1</MenuItem>
+                    <MenuItem name="4-2">Option 2</MenuItem>
+                </Submenu>
             </Menu>
         </Sider>
         <Layout :style="{marginLeft: '200px'}">
@@ -51,7 +59,7 @@
                     <BreadcrumbItem>Layout</BreadcrumbItem>
                 </Breadcrumb>
                 <Card>
-                    <div style="height: 600px">Content</div>
+                    <div style="height: 600px"><router-view></router-view></div>
                 </Card>
             </Content>
         </Layout>
