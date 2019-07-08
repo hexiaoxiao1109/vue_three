@@ -51,7 +51,9 @@
                     <BreadcrumbItem>Layout</BreadcrumbItem>
                 </Breadcrumb>
                 <Card>
-                    <div style="height: 600px">Content</div>
+                    <div style="height: 600px">
+                        <router-view></router-view>
+                    </div>
                 </Card>
             </Content>
         </Layout>

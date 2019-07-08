@@ -2,17 +2,18 @@
 import axios from 'axios'
 import qs from 'qs'
 
+
 //2.全局配置
-axios.defaults.baseURL = '';
+axios.defaults.baseURL = 'http://118.31.9.103';
 
-//3.定义接口 并 导出
+// 3.定义接口 并 导出
 
-export const goodsListApi = (apiParams) => {
-    return axios({
-        method:'',
-        url: '',
-        params: apiParams 
-    }).then(res => res.data)
-}
+// export const goodsListApi = (apiParams) => {
+//     return axios({
+//         method:'',
+//         url: '',
+//         params: apiParams 
+//     }).then(res => res.data)
+// }
 
 
