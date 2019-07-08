@@ -9,10 +9,8 @@ axios.defaults.baseURL = '';
 
 export const goodsListApi = (apiParams) => {
     return axios({
-        method:'',
+        method: '',
         url: '',
-        params: apiParams 
+        params: apiParams
     }).then(res => res.data)
 }
-
-
