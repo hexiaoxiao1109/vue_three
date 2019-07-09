@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import UserList from './views/UserList.vue'
+import UserAdd from './views/UserAdd.vue'
 
 Vue.use(Router)
 
@@ -12,8 +13,11 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home,
-            children: [{ path: 'UserList', component: UserList }]
-        },
+            children: [
+                { path: 'UserList', component: UserList },
+                {path: 'UserAdd', component: UserAdd , }
+            ]
+            },
 
         {
             path: '/about',

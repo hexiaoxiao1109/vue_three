@@ -1,6 +1,6 @@
 <template>
   <div class="UserList">
-       
+    <Input @click.native="search" v-model="username" search enter-button placeholder="Enter something..." style="width: 300px" />
     <Table border :columns="columns12" :data="data6">
         <template slot-scope="{ row }" slot="id">
             <strong>{{ row.id }}</strong>
@@ -10,44 +10,21 @@
             <Button type="error" size="small" @click="remove(index)">Delete</Button>
         </template>
     </Table>
+    <!-- <Page :total="100" @on-change="changepage" show-elevator /> -->
+    <Page :total="100"/>
+    <br>
+    <Button type="success" long style="width: 300px" @click.native="add">添加</Button>
+   
 </div>
 </template>
 <script>
-    import axios from 'axios'
+   
+    import{userListApi} from "@/api"
     export default {
         created() {
             this.initData()
         },
-        // methods: {
-        //     initData() {
-        //         axios({
-        //                 url: "http://10.31.164.10:8000/user",
-        //                 // method: 'get'
-        //             })
-        //             .then(res => {
-        //                 console.log(res.data.data)
-        //                     this.data1 = res.data.data
-        //             })
-        //             .catch(error => {
-        //                 console.log(error)
-        //             })
-        //     }
-        // },
-        // data() {
-        //     return {
-        //         columns1: [{
-        //             title: '编号',
-        //             key: 'id'
-        //         }, {
-        //             title: '用户名',
-        //             key: 'username'
-        //         }
-        //         ],
-        //         data1: [
-                   
-        //         ]
-        //     }
-        // }
+      
         data () {
             return {
                 columns12: [
@@ -59,6 +36,10 @@
                         title: '用户名',
                         key: 'username'
                     },
+                    {
+                        title: '密码',
+                        key: 'password'
+                    },
                     
                     {
                         title: 'Action',
@@ -67,21 +48,33 @@
                         align: 'center'
                     }
                 ],
-                data6: [
-                    
-                ]
+                data6: [],
+                username:'',
+                pageno:1
             }
         },
         methods: {
-          
+            search(){
+               
+                this.initData()
+            },
+            changepage(pageno){
+                console.log(pageno)
+                this.pageno=pageno
+                this.initData()
+            },
+            add(){
+                this.$router.push({ path: 'userAdd'})
+            },
+    
             initData() {
-                axios({
-                        url: "http://10.31.164.10:8000/user",
-                        
-                    })
+                userListApi({
+                    username:this.username,
+                    pageno:this.pageno
+                })
                     .then(res => {
-                        console.log(res.data.data)
-                        this.data6 = res.data.data
+                      
+                        this.data6 = res.data
                     })
                     .catch(error => {
                         console.log(error)
