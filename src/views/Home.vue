@@ -7,9 +7,13 @@
         overflow: hidden;
     }
     .layout-header-bar{
-        background:black;
+        background: #fff;
         box-shadow: 0 1px 1px rgba(0,0,0,.1);
     }
+    .color{
+        color:#d7dde4
+    }
+    
 </style>
 <template>
     <div class="layout">
@@ -43,10 +47,10 @@
                 <Submenu name="4">
                     <template slot="title">
                         <Icon type="ios-analytics"></Icon>
-                        Item 4
+                        地址
                     </template>
-                    <MenuItem name="4-1">Option 1</MenuItem>
-                    <MenuItem name="4-2">Option 2</MenuItem>
+                    <MenuItem name="4-1"><router-link to="/address" class="color">查看地址</router-link></MenuItem>
+                    <MenuItem name="4-2"> <router-link to="/lookover" class="color">添加地址</router-link> </MenuItem>
                 </Submenu>
             </Menu>
         </Sider>
@@ -59,7 +63,9 @@
                     <BreadcrumbItem>Layout</BreadcrumbItem>
                 </Breadcrumb>
                 <Card>
-                    <div style="height: 600px"><router-view></router-view></div>
+                    <div style="height: 600px">
+                      <router-view></router-view>
+                    </div>
                 </Card>
             </Content>
         </Layout>
@@ -70,3 +76,4 @@
         
     }
 </script>
+
