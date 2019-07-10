@@ -21,10 +21,19 @@ export const userListApi = (apiParams) => {
         params: apiParams
     }).then(res => res.data)
 }
+
 export const userAddApi = (apiParams) => {
     return axios({
         method: 'get',
         url: '/user/create',
+        params: apiParams
+    }).then(res => res.data)
+}
+
+export const userDelApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/delete',
         params: apiParams
     }).then(res => res.data)
 }

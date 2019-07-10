@@ -6,12 +6,12 @@
             <strong>{{ row.id }}</strong>
         </template>
         <template slot-scope="{ row, index }" slot="action">
-            <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">View</Button>
-            <Button type="error" size="small" @click="remove(index)">Delete</Button>
+            <Button type="primary" size="small" style="margin-right: 5px" @click="update(index)">更新</Button>
+            <Button type="error" size="small" @click="remove(index)">删除</Button>
         </template>
     </Table>
     <!-- <Page :total="100" @on-change="changepage" show-elevator /> -->
-    <Page :total="100"/>
+    <Page :total="100" @on-change="changepage"/>
     <br>
     <Button type="success" long style="width: 300px" @click.native="add">添加</Button>
    
@@ -19,7 +19,7 @@
 </template>
 <script>
    
-    import{userListApi} from "@/api"
+    import{userListApi,userDelApi} from "@/api"
     export default {
         created() {
             this.initData()
@@ -80,14 +80,25 @@
                         console.log(error)
                     })
             },
-            show (index) {
+           update (index) {
                 this.$Modal.info({
-                    title: 'User Info',
-                    content: `id：${this.data6[index].id}<br>：username${this.data6[index].username}`
+                    title: '信息修改',
+                    content: `用户名：<Input type="text"  placeholder="用户名" v-model="username" /><br/>
+                    密&nbsp;&nbsp;&nbsp;&nbsp;码：<Input type="text"  placeholder="密码" v-model="passname" />`
                 })
             },
+            //删除数据
             remove (index) {
-                this.data6.splice(index, 1);
+                // console.log(this.data6)
+                // console.log(index)
+                // console.log(this.data6[index].id)
+                let id = this.data6[index].id
+
+                userDelApi({id:id})
+                .then(res=>{console.log(res)})
+                .catch(err=>{console.log(err)})
+
+                this.initData()
             }
         }
     }

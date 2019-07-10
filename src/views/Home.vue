@@ -11,6 +11,9 @@
         background: #fff;
         box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
     }
+    .color{
+        color:#d7dde4
+    }
 </style>
 <template>
     <div class="layout">
@@ -19,11 +22,11 @@
                 <Submenu name="1">
                     <template slot="title">
                         <Icon type="ios-navigate"></Icon>
-                        Item 1
+                        用户模块
                     </template>
-<MenuItem name="1-1">Option 1</MenuItem>
-<MenuItem name="1-2">Option 2</MenuItem>
-<MenuItem name="1-3">Option 3</MenuItem>
+<MenuItem name="1-1"><router-link to="/userlist" class="color">用户查看</router-link></MenuItem>
+<MenuItem name="1-2"><router-link to="/userAdd" class="color">添加用户</router-link></MenuItem>
+
 </Submenu>
 <Submenu name="2">
     <template slot="title">
