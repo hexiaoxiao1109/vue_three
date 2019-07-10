@@ -26,6 +26,17 @@ export const delListApi = (apiParams) => {
     }).then(res => res.data)
 }
 
+// 改
+
+export const updataListApi = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/address/update',
+        params: apiParams 
+    }).then(res => res.data)
+}
+
+
 
 // 查
 export const addressListApi = (apiParams) => {
