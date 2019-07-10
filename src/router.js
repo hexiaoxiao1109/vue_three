@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Address from './views/Address.vue'
 import LookOver from './views/LookOver.vue'
+import modalTest from './views/modalTest.vue'
 
 Vue.use(Router)
 
@@ -19,6 +20,11 @@ export default new Router({
           path:"address",
           name:"address",
           component:Address,
+        },
+        {
+          path:"modal",
+          name:"modal",
+          component:modalTest,
         },
         {
           path:"lookover",
