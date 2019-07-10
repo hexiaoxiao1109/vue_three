@@ -37,4 +37,11 @@ export const userDelApi = (apiParams) => {
         params: apiParams
     }).then(res => res.data)
 }
+export const userUpdateApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/update',
+        params: apiParams
+    }).then(res => res.data)
+}
 

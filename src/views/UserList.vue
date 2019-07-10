@@ -14,12 +14,30 @@
     <Page :total="100" @on-change="changepage"/>
     <br>
     <Button type="success" long style="width: 300px" @click.native="add">添加</Button>
+    <Modal
+            v-model="modal1"
+            title="修改数据"
+            @on-ok="ok"
+            @on-cancel="cancel">
+            <Form  label-position="right" :label-width="100">
+                
+                <FormItem label="编号：">
+                    <Input v-model="updata.id"/>
+                </FormItem>
+                <FormItem label="用户名：">
+                    <Input v-model="updata.username"/>
+                </FormItem>
+                <FormItem label="密码：">
+                    <Input v-model="updata.password"/>
+                </FormItem>
+            </Form>
+        </Modal>
    
 </div>
 </template>
 <script>
    
-    import{userListApi,userDelApi} from "@/api"
+    import{userListApi,userDelApi,userUpdateApi} from "@/api"
     export default {
         created() {
             this.initData()
@@ -48,9 +66,13 @@
                         align: 'center'
                     }
                 ],
+                updata:[],
                 data6: [],
                 username:'',
-                pageno:1
+                pageno:1,
+                password:"",
+                id:"",
+                modal1: false,
             }
         },
         methods: {
@@ -65,6 +87,24 @@
             },
             add(){
                 this.$router.push({ path: 'userAdd'})
+            },
+            // 修改数据发弹出框
+            ok () {
+                updataListApi({
+                    id:this.updata.id,
+                  username:this.updata.username,
+                    password:this.updata.password,
+
+                })
+                .then(res=>{
+                    this.init()
+                })
+                .catch(
+                    err=>{console.log(err)
+                })
+            },
+            cancel () {
+                // this.$Message.info('点击了取消');
             },
     
             initData() {
@@ -81,11 +121,8 @@
                     })
             },
            update (index) {
-                this.$Modal.info({
-                    title: '信息修改',
-                    content: `用户名：<Input type="text"  placeholder="用户名" v-model="username" /><br/>
-                    密&nbsp;&nbsp;&nbsp;&nbsp;码：<Input type="text"  placeholder="密码" v-model="passname" />`
-                })
+            this.modal1 = true
+                this.updata = this.data6[index];
             },
             //删除数据
             remove (index) {
