@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import  Uselist from './views/Uselist.vue'
+import Address from './views/Address.vue'
+import LookOver from './views/LookOver.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -12,9 +14,18 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
-      children: [
-        { path: "uselist", name: "uselist", component: Uselist },
-    ]
+      children:[
+        {
+          path:"address",
+          name:"address",
+          component:Address,
+        },
+        {
+          path:"lookover",
+          name:"lookOver",
+          component:LookOver
+        }
+      ]
     },
     {
       path: '/about',
