@@ -32,4 +32,32 @@ export const goodsListadd = (apiParams) => {
     }).then(res => res.data)
 }
 
+export const goodsListdel = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/goods/delete',
+        params:apiParams,
+    }).then(res => res.data)
+}
+
+export const goodsListchange = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/goods/update',
+        params:apiParams,
+    }).then(res => res.data)
+}
+
+export const goodsListsearch = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/goods/search',
+        params:apiParams,
+    }).then(res => res.data)
+}
+
+
+
+
+
 
