@@ -3,7 +3,7 @@
         <Input v-model="nickname" placeholder="Enter something..." clearable style="width: 200px" class="mar" />
         <Button type="primary" shape="circle" icon="ios-search" class="mar" @click="found"></Button>
         <Table border :columns="columns7" :data="data6"></Table>
-        <Page :total="100" class="mar" @on-change="changepage" />
+        <Page :total="100" class="mar" @on-change="changepage"/>
         <Modal
             v-model="modal1"
             title="修改数据"

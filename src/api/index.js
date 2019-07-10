@@ -46,5 +46,56 @@ export const addressListApi = (apiParams) => {
         params: apiParams 
     }).then(res => res.data)
 }
+//订单模块
+export const sListApi = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/order',
+        params:apiParams, 
+    }).then(res => res.data)
+}
+export const loginApi = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/login',
+        params:apiParams, 
+    }).then(res => res.data)
+}
+//商品模块
+// 增
+export const goodsListadd = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/goods/create',
+        params:apiParams,
+    }).then(res => res.data)
+}
+
+// 删
+export const goodsListdel = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/goods/delete',
+        params:apiParams,
+    }).then(res => res.data)
+}
+
+// 改
+export const goodsListchange = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/goods/update',
+        params:apiParams,
+    }).then(res => res.data)
+}
+
+// 查
+export const goodsListApi = (apiParams) => {
+    return axios({
+        method:'get',
+        url: '/goods/search',
+        params:apiParams,
+    }).then(res => res.data)
+}
 
 

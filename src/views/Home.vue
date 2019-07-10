@@ -22,7 +22,7 @@
 <template>
     <div class="layout">
         <Sider :style="{position: 'fixed', height: '100vh', left: 0, overflow: 'auto'}">
-            <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
+            <Menu active-name="1" theme="dark" width="auto" :open-names="['1']">
                 <Submenu name="1">
                     <template slot="title">
                         <Icon type="ios-person" />
@@ -36,15 +36,16 @@
                         <Icon type="ios-keypad"></Icon>
                         商品
                     </template>
-                    <MenuItem name="2-1"><router-link to="/" class="color">查看商品</router-link></MenuItem>
-                    <MenuItem name="2-2"><router-link to="/" class="color">添加商品</router-link></MenuItem>
+                    <MenuItem name="2-1"><router-link to="/Goods" class="color">查看商品</router-link></MenuItem>
+                    <MenuItem name="2-2"><router-link to="/Addlist" class="color">添加商品</router-link></MenuItem>
+                    <MenuItem name="2-3"><router-link to="/" class="color">修改商品</router-link></MenuItem>
                 </Submenu>
                 <Submenu name="3">
                     <template slot="title">
                         <Icon type="md-reorder" />
                         订单
                     </template>
-                    <MenuItem name="3-1"><router-link to="/" class="color">查看订单</router-link></MenuItem>
+                    <MenuItem name="3-1"><router-link to="/Uselist" class="color">查看订单</router-link></MenuItem>
                 </Submenu>
                 <Submenu name="4">
                     <template slot="title">
@@ -58,7 +59,7 @@
         </Sider>
         <Layout :style="{marginLeft: '200px'}">
             <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}">
-                <h1>后台管理</h1>
+                <h1>后台管理</h1> 
             </Header>
             <Content :style="{padding: '0 16px 16px'}">
                 <Breadcrumb :style="{margin: '16px 0'}">
@@ -75,9 +76,12 @@
         </Layout>
     </div>
 </template>
-<script>
+ <script>
     export default {
-        
+
     }
 </script>
+<style scoped>
+</style>
+
 

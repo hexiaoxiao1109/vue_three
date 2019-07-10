@@ -2,15 +2,24 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Address from './views/Address.vue'
-import LookOver from './views/LookOver.vue'
+// import LookOver from './views/LookOver.vue'
 import modalTest from './views/modalTest.vue'
-
+import Uselist from './views/Uselist.vue'
+import Goods from './views/Goods.vue'
+import Addlist from './views/Addlist.vue'
+import Login from './views/Login.vue'
+import LookOver from './views/LookOver.vue'
 Vue.use(Router)
 
-export default new Router({
+const router=new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,     
+    },
     {
       path: '/',
       name: 'home',
@@ -30,16 +39,33 @@ export default new Router({
           path:"lookover",
           name:"lookOver",
           component:LookOver
-        }
+        },
+        {
+          path:"uselist",
+          name:"Uselist",
+          component:Uselist
+        },
+        {
+          path: '/goods',
+          name: 'Goods',
+          component: Goods
+        },
+        {
+          path: '/addlist',
+          name: 'Addlist',
+          component:Addlist
+        },
       ]
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
   ]
 })
+router.beforeEach((to,from,next)=>{
+  var token=localStorage.getItem('username')
+  if(to.path!=='/login' && !token){
+    next({path:'/login'})
+  }else{
+    next()
+  }
+  })
+  
+  export default router
