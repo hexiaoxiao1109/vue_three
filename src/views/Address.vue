@@ -9,6 +9,9 @@
             title="修改数据"
             @on-ok="ok"
             @on-cancel="cancel">
+            <template v-solt:form>
+
+            </template>
             <Form  label-position="right" :label-width="100">
                 <FormItem label="用户ID：">
                     <Input v-model="updata.user_id" />

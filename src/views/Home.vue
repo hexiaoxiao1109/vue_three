@@ -53,7 +53,7 @@
                         地址
                     </template>
                     <MenuItem name="4-1"><router-link to="/address" class="color">查看地址</router-link></MenuItem>
-                    <MenuItem name="4-2"> <router-link to="/lookover" class="color">添加地址</router-link> </MenuItem>
+                    <MenuItem name="4-2"> <router-link to="/addaddress" class="color">添加地址</router-link> </MenuItem>
                 </Submenu>
             </Menu>
         </Sider>

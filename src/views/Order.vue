@@ -11,7 +11,7 @@
         <Button type="error" size="small" @click="remove(index)">删除</Button>
         </template>
     </Table>
-    <Page :total="100" show-sizer @on-change="changepage" class=".mar"/>
+    <Page :total="100" class="mar" />
   </div>
 </template>
 <script>
@@ -56,8 +56,8 @@ export default {
     //分页
     //制动有一个形参代表第几页
     changepage(pageno){
-   this.pageno=pageno,
-   this.initdata()
+      this.pageno=pageno,
+      this.initdata()
     },
     //搜索
     serch(){
