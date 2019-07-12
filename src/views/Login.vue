@@ -1,6 +1,6 @@
 <template>
  <div class="login">
- <div class="container demo-1">
+    <div class="container demo-1">
 			<div class="content">
 				<div id="large-header" class="large-header">
 					<canvas id="demo-canvas"></canvas>

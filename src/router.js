@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Address from './views/Address.vue'
-// import LookOver from './views/LookOver.vue'
-import modalTest from './views/modalTest.vue'
-import Uselist from './views/Uselist.vue'
+import Modal from './components/Modal.vue'
+import Order from './views/Order.vue'
 import Goods from './views/Goods.vue'
 import Addlist from './views/Addlist.vue'
 import Login from './views/Login.vue'
+import AddAddress from './views/AddAddress.vue'
 import LookOver from './views/LookOver.vue'
 import UserList from './views/UserList.vue'
 import UserAdd from './views/UserAdd.vue'
@@ -35,17 +35,17 @@ const router=new Router({
         {
           path:"modal",
           name:"modal",
-          component:modalTest,
+          component:Modal,
         },
         {
-          path:"lookover",
-          name:"lookOver",
-          component:LookOver
+          path:"addaddress",
+          name:"AddAddress",
+          component:AddAddress
         },
         {
-          path:"uselist",
-          name:"Uselist",
-          component:Uselist
+          path:"order",
+          name:"Order",
+          component:Order
         },
         {
           path: '/goods',
