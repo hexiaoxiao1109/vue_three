@@ -97,5 +97,41 @@ export const goodsListApi = (apiParams) => {
         params:apiParams,
     }).then(res => res.data)
 }
+//用户模块
+
+export const userListApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user',
+        params: apiParams
+    }).then(res => res.data)
+}
+//增
+export const userAddApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/create',
+        params: apiParams
+    }).then(res => res.data)
+}
+//删
+export const userDelApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/delete',
+        params: apiParams
+    }).then(res => res.data)
+}
+//改
+export const userUpdateApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/update',
+        params: apiParams
+    }).then(res => res.data)
+}
+
+
+
 
 
