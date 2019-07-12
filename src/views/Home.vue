@@ -45,7 +45,7 @@
                         <Icon type="md-reorder" />
                         订单
                     </template>
-                    <MenuItem name="3-1"><router-link to="/Uselist" class="color">查看订单</router-link></MenuItem>
+                    <MenuItem name="3-1"><router-link to="/order" class="color">查看订单</router-link></MenuItem>
                 </Submenu>
                 <Submenu name="4">
                     <template slot="title">
