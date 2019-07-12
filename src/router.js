@@ -9,6 +9,8 @@ import Goods from './views/Goods.vue'
 import Addlist from './views/Addlist.vue'
 import Login from './views/Login.vue'
 import LookOver from './views/LookOver.vue'
+import UserList from './views/UserList.vue'
+import UserAdd from './views/UserAdd.vue'
 Vue.use(Router)
 
 const router=new Router({
@@ -54,6 +56,14 @@ const router=new Router({
           path: '/addlist',
           name: 'Addlist',
           component:Addlist
+        }, {
+          path: '/UserList',
+          name: 'UserList',
+          component:UserList
+        }, {
+          path: '/UserAdd',
+          name: 'UserAdd',
+          component:UserAdd
         },
       ]
     },

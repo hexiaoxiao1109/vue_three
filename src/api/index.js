@@ -3,7 +3,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 //2.全局配置
-axios.defaults.baseURL = 'http://10.31.164.10:8000/';
+axios.defaults.baseURL = 'http://47.103.77.150:8000/';
 
 //3.定义接口 并 导出
 
@@ -97,5 +97,41 @@ export const goodsListApi = (apiParams) => {
         params:apiParams,
     }).then(res => res.data)
 }
+//用户模块
+
+export const userListApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user',
+        params: apiParams
+    }).then(res => res.data)
+}
+//增
+export const userAddApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/create',
+        params: apiParams
+    }).then(res => res.data)
+}
+//删
+export const userDelApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/delete',
+        params: apiParams
+    }).then(res => res.data)
+}
+//改
+export const userUpdateApi = (apiParams) => {
+    return axios({
+        method: 'get',
+        url: '/user/update',
+        params: apiParams
+    }).then(res => res.data)
+}
+
+
+
 
 
