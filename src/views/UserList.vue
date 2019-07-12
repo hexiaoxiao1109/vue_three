@@ -1,6 +1,6 @@
 <template>
   <div class="UserList">
-    <Input @click.native="search" v-model="username" search enter-button placeholder="Enter something..." style="width: 300px" />
+    <Input @click.native="search" v-model="username" search enter-button placeholder="Enter something..." style="width: 300px" class="mar" />
     <Table border :columns="columns12" :data="data6">
         <template slot-scope="{ row }" slot="id">
             <strong>{{ row.id }}</strong>
@@ -10,10 +10,8 @@
             <Button type="error" size="small" @click="remove(index)">delete</Button>
         </template>
     </Table>
-    <!-- <Page :total="100" @on-change="changepage" show-elevator /> -->
-    <Page :total="100" @on-change="changepage"/>
+    <Page :total="100" @on-change="changepage" class="mar"/>
     <br>
-    <!-- <Button type="success" long style="width: 300px" @click.native="add">添加</Button> -->
     <Modal
             v-model="modal1"
             title="修改数据"
@@ -143,4 +141,7 @@
 </script>
 <style scoped>
 
+.mar{
+    margin: 10px 0 10px 5px
+}
 </style>

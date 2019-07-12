@@ -1,9 +1,14 @@
 <template>
     <div class="address">
+        <!-- 搜索框 -->
         <Input v-model="nickname" placeholder="Enter something..." clearable style="width: 200px" class="mar" />
+        <!-- 搜索按钮 -->
         <Button type="primary" shape="circle" icon="ios-search" class="mar" @click="found"></Button>
+        <!-- 表格 -->
         <Table border :columns="columns7" :data="data6"></Table>
+        <!-- 分页 -->
         <Page :total="100" class="mar" @on-change="changepage"/>
+        <!-- 修改的模态框 -->
         <Modal
             v-model="modal1"
             title="修改数据"
@@ -42,7 +47,6 @@
                 </FormItem>
             </Form>
         </Modal>
-        <!-- <Button type="success" style="width:100px" @click="add">添加</Button> -->
     </div>
 </template>
 <script>
@@ -53,6 +57,10 @@ import {addressListApi,addListApi,delListApi,updataListApi} from "@/api"
         data () {
             return {
                 columns7: [
+                    {
+                        title: '编号',
+                        key: 'id'
+                    },
                     {
                         title: '姓名',
                         key: 'nickname',

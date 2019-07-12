@@ -28,7 +28,7 @@
                         <Icon type="ios-person" />
                         用户
                     </template>
-                    <MenuItem name="1-1"><router-link to="/UserList" class="color">查看用户</router-link> </MenuItem>
+                    <MenuItem name="1-1"><router-link to="/UserList" class="color">查看用户</router-link></MenuItem>
                     <MenuItem name="1-2"><router-link to="/UserAdd" class="color">添加用户</router-link></MenuItem>
                 </Submenu>
                 <Submenu name="2">
