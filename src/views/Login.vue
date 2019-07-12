@@ -51,7 +51,7 @@ export default {
              }else{
                  let username=localStorage.setItem('username',this.infolist.username) 
                  alert('登录成功')
-                 this.$router.push({path:'/'})
+                 this.$router.push({path:'/UserList'})
              }
          })
      } 

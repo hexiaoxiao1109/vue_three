@@ -58,15 +58,15 @@ import {addListApi} from "@/api"
                 })
                 .then(res=>{
                     // console.log("操作成功")
-                    console.log(res)
+                    if(res.meta.state == 201){
+                        alert(res.meta.msg)
+                    }
                 })
                 .catch(err=>{
                     console.log(err)
                 })
             },
             submit(){
-                // alert(2)
-                console.log(this.formRight.userId,this.formRight.tel)
                 this.init()
             }
         },
