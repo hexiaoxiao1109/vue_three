@@ -33,13 +33,13 @@
             }
         },
         methods: {
-          
+            
             add(username,password){
                 this.initData()
-            // this.username=username
-            // this.password=password
-            alert('添加成功')
-            this.$router.push({ path: '/'})
+                // this.username=username
+                // this.password=password
+                alert('添加成功')
+                this.$router.push({ path: '/'})
             },
     
             initData() {
@@ -48,7 +48,12 @@
                     password:this.password
                 })
                 .then(res => {
-                    console.log(res)
+                    if(res.meta.state == 201){
+                        this.$Message.success("操作成功");
+                    }else{
+                        this.$Message.error("由于某种不清楚原因导致操作失败");
+                    }
+                    // console.log(res)
                     // this.data6 = res.data
                 })
                 .catch(error => {

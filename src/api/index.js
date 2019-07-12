@@ -7,6 +7,9 @@ axios.defaults.baseURL = 'http://47.103.77.150:8000/';
 
 //3.定义接口 并 导出
 
+
+
+// 订单地址模块
 // 增
 export const addListApi = (apiParams) => {
     return axios({
@@ -15,9 +18,7 @@ export const addListApi = (apiParams) => {
         params: apiParams 
     }).then(res => res.data)
 }
-
 // 删
-
 export const delListApi = (apiParams) => {
     return axios({
         method:'get',
@@ -25,9 +26,7 @@ export const delListApi = (apiParams) => {
         params: apiParams 
     }).then(res => res.data)
 }
-
 // 改
-
 export const updataListApi = (apiParams) => {
     return axios({
         method:'get',
@@ -35,9 +34,6 @@ export const updataListApi = (apiParams) => {
         params: apiParams 
     }).then(res => res.data)
 }
-
-
-
 // 查
 export const addressListApi = (apiParams) => {
     return axios({
@@ -46,6 +42,9 @@ export const addressListApi = (apiParams) => {
         params: apiParams 
     }).then(res => res.data)
 }
+
+
+
 //订单模块
 export const sListApi = (apiParams) => {
     return axios({
@@ -54,6 +53,9 @@ export const sListApi = (apiParams) => {
         params:apiParams, 
     }).then(res => res.data)
 }
+
+
+// 登录模块
 export const loginApi = (apiParams) => {
     return axios({
         method:'get',
@@ -61,6 +63,8 @@ export const loginApi = (apiParams) => {
         params:apiParams, 
     }).then(res => res.data)
 }
+
+
 //商品模块
 // 增
 export const goodsListadd = (apiParams) => {
@@ -70,7 +74,6 @@ export const goodsListadd = (apiParams) => {
         params:apiParams,
     }).then(res => res.data)
 }
-
 // 删
 export const goodsListdel = (apiParams) => {
     return axios({
@@ -79,7 +82,6 @@ export const goodsListdel = (apiParams) => {
         params:apiParams,
     }).then(res => res.data)
 }
-
 // 改
 export const goodsListchange = (apiParams) => {
     return axios({
@@ -88,7 +90,6 @@ export const goodsListchange = (apiParams) => {
         params:apiParams,
     }).then(res => res.data)
 }
-
 // 查
 export const goodsListApi = (apiParams) => {
     return axios({
@@ -97,8 +98,11 @@ export const goodsListApi = (apiParams) => {
         params:apiParams,
     }).then(res => res.data)
 }
-//用户模块
 
+
+
+//用户模块
+// 查
 export const userListApi = (apiParams) => {
     return axios({
         method: 'get',

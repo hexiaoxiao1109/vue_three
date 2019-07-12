@@ -38,7 +38,6 @@
                     </template>
                     <MenuItem name="2-1"><router-link to="/Goods" class="color">查看商品</router-link></MenuItem>
                     <MenuItem name="2-2"><router-link to="/Addlist" class="color">添加商品</router-link></MenuItem>
-                    <MenuItem name="2-3"><router-link to="/" class="color">修改商品</router-link></MenuItem>
                 </Submenu>
                 <Submenu name="3">
                     <template slot="title">

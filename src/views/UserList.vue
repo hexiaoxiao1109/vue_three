@@ -52,11 +52,6 @@
                         title: '用户名',
                         key: 'username'
                     },
-                    // {
-                    //     title: '密码',
-                    //     key: 'password'
-                    // },
-                    
                     {
                         title: 'Action',
                         slot: 'action',
@@ -83,10 +78,6 @@
                 this.pageno=pageno
                 this.initData()
             },
-            // add(){
-            //     this.$router.push({ path: 'userAdd'})
-            // },
-            // 修改数据发弹出框
             ok () {
                 updataListApi({
                     id:this.updata.id,
@@ -102,7 +93,7 @@
                 })
             },
             cancel () {
-                // this.$Message.info('点击了取消');
+                // this.$Message.info('点击了取消');o
             },
     
             initData() {

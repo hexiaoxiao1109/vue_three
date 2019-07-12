@@ -1,72 +1,57 @@
 <template>
     <Form :model="formRight" label-position="right" :label-width="100">
-        <FormItem label="用户ID">
-            <Input v-model="formRight.userId"/>
+        <FormItem label="商品">
+            <Input v-model="formRight.title"/>
         </FormItem>
-        <FormItem label="默认选择">
-            <Input v-model="formRight.default"/>
+        <FormItem label="数量">
+            <Input v-model="formRight.num"/>
         </FormItem>
-        <FormItem label="昵称">
-            <Input v-model="formRight.nickname"/>
+        <FormItem label="价格">
+            <Input v-model="formRight.price"/>
         </FormItem>
-        <FormItem label="省份">
-            <Input v-model="formRight.province"/>
-        </FormItem>
-        <FormItem label="城市">
-            <Input v-model="formRight.city"/>
-        </FormItem>
-        <FormItem label="区域">
-            <Input v-model="formRight.area"/>
-        </FormItem>
-        <FormItem label="地址">
-            <Input v-model="formRight.address"/>
-        </FormItem>
-        <FormItem label="电话">
-            <Input v-model="formRight.tel"/>
+        <FormItem label="图片">
+            <Input v-model="formRight.img"/>
         </FormItem>
         <Button type="primary" @click="submit" long >Submit</Button>
     </Form>
 </template>
 <script>
-import {addListApi} from "@/api"
+import {goodsListadd} from "@/api"
     export default {
+        // 定义模型数据
         data () {
             return {
                 formRight: {
-                    userId: '',
-                    default: '',
-                    nickname: '',
-                    province: '',
-                    city: '',
-                    area: '',
-                    address: '',
-                    tel: '',
+                    title: '',
+                    num: '',
+                    price: '',
+                    img: '',
                 },
             }
         },
         methods: {
+            // 定义接口请求
             init(){
-                addListApi({
-                    userId: this.formRight.userId,
-                    default: this.formRight.default,
-                    nickname: this.formRight.nickname,
-                    province: this.formRight.province,
-                    city: this.formRight.city,
-                    area: this.formRight.area,
-                    address: this.formRight.address,
-                    tel: this.formRight.tel,
+                goodsListadd({
+                    title: this.formRight.title,
+                    num: this.formRight.num,
+                    price: this.formRight.price,
+                    img: this.formRight.img,
                 })
                 .then(res=>{
-                    // console.log("操作成功")
-                    console.log(res)
+                    // 判断状态 
+                    if(res.meta.state == 201){
+                        this.$Message.success("操作成功");
+                    }else{
+                        this.$Message.error("由于某种不清楚原因导致操作失败");
+                    }
                 })
                 .catch(err=>{
                     console.log(err)
                 })
             },
+            // 点击提交按钮
             submit(){
-                // alert(2)
-                console.log(this.formRight.userId,this.formRight.tel)
                 this.init()
             }
         },
@@ -74,13 +59,5 @@ import {addListApi} from "@/api"
 </script>
 
 <style scoped>
-/* .ivu-form-item{
-    margin-bottom: 10px
-}
-.ivu-input-wrapper{
-    width: 400px
-}
-.ivu-form-item{
-    padding-left: 200px
-} */
+
 </style>

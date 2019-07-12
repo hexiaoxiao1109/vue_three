@@ -45,6 +45,7 @@ import {addListApi} from "@/api"
             }
         },
         methods: {
+            // 定义接口请求
             init(){
                 addListApi({
                     userId: this.formRight.userId,
@@ -57,15 +58,17 @@ import {addListApi} from "@/api"
                     tel: this.formRight.tel,
                 })
                 .then(res=>{
-                    // console.log("操作成功")
                     if(res.meta.state == 201){
-                        alert(res.meta.msg)
+                        this.$Message.success("操作成功");
+                    }else{
+                        this.$Message.error("由于某种不清楚原因导致操作失败");
                     }
                 })
                 .catch(err=>{
                     console.log(err)
                 })
             },
+            // 点击提交按钮 调用函数
             submit(){
                 this.init()
             }
@@ -74,13 +77,5 @@ import {addListApi} from "@/api"
 </script>
 
 <style scoped>
-/* .ivu-form-item{
-    margin-bottom: 10px
-}
-.ivu-input-wrapper{
-    width: 400px
-}
-.ivu-form-item{
-    padding-left: 200px
-} */
+
 </style>
