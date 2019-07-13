@@ -9,6 +9,7 @@ import Addlist from './views/Addlist.vue'
 import Login from './views/Login.vue'
 import UserList from './views/UserList.vue'
 import UserAdd from './views/UserAdd.vue'
+import Error from './components/Error.vue'
 Vue.use(Router)
 
 const router=new Router({
@@ -67,6 +68,17 @@ const router=new Router({
           component:UserAdd
         },
       ]
+    },
+     // 404
+    {
+      path: '/error',
+      name: '404',
+      component: Error,     
+    },
+    // 路由重定向
+    {
+      path: '*',
+      redirect:'/error',  
     },
   ]
 })
