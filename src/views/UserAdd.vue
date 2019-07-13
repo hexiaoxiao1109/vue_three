@@ -30,6 +30,7 @@
                 // data6: [],
                 username:'',
                 password:''
+                
             }
         },
         methods: {
